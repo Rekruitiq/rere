@@ -1,131 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>REkruitq | Recruitment, HR & Payroll Solutions</title>
-  <meta name="description" content="REkruitq provides South Africa–focused recruitment, HR, and payroll services for small to growing businesses." />
+  <meta name="description" content="REkruitq provides South Africa–focused recruitment, HR, and payroll services for small to growing businesses. Compliant, people-first, and reliable." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  
   <style>
-    :root { --primary: #0f0f0f; --accent: #cfeee3; --text: #333; }
-    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); line-height: 1.6; }
-    header { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: bold; }
-    nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text); font-weight: 500; }
-    
-    .hero { padding: 4rem 1.5rem; text-align: center; background: #fff; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-    
-    section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem; }
-    
-    /* Fixing the Card Layout */
-    .cards { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 1.5rem; 
-    }
-    .card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; background: white; }
-    
-    footer { background: var(--primary); color: white; padding: 3rem 1.5rem; text-align: center; }
-    input, select, textarea { width: 100%; box-sizing: border-box; }
-    button:hover { opacity: 0.8; cursor: pointer; }
-  </style>
-</head>
+    :root {
+      --black: #0f0f0f;
+      --white: #ffffff;
+      --green: #cfeee3;
+      --green-strong: #9ed9c5;
+      --green-soft: #eef9f5;
+      --gray: #6f6f6f;
+    }* { margin: 0; padding: 0; box-sizing: border-box; }
 
-<body>
-  <header>
-    <div class="logo">REkruitq<br><span style="font-size:0.85rem;font-family:Inter;color:#6f6f6f;font-weight:400;">Modern Recruitment • HR • Payroll</span></div>
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, var(--white), var(--green-soft));
+  color: var(--black);
+  line-height: 1.6;
+}
+
+header {
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+  padding: 0.3rem 0;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-strong), var(--green));
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after { width: 100%; }
+
+.hero {
+  padding: 6rem 4rem;
+  background: linear-gradient(135deg, var(--green), var(--green-soft));
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #2f2f2f;
+  font-size: 1.05rem;
+}
+
+section { padding: 4.5rem 4rem; position: relative; }
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--green-strong);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 10px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  padding: 2.3rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--white), var(--green-soft));
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #e6f3ef;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.active { opacity: 1; transform: translateY(0); }
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.card h3 { margin-bottom: 0.8rem; font-size: 1.15rem; display:flex; align-items:center; }
+
+.card h3 svg { margin-right: 0.6rem; stroke: var(--green-strong); width: 28px; height: 28px; }
+
+.card p { color: var(--gray); }
+
+form input, form select, form textarea {
+  font-family: 'Inter', sans-serif;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--green-strong);
+  box-shadow: 0 0 0 3px rgba(158,217,197,0.3);
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--black), #2a2a2a);
+  border-radius: 8px;
+  color: white;
+  padding: 0.9rem;
+  font-weight: 500;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+button:hover { transform: scale(1.05); }
+
+footer {
+  padding: 3rem 4rem;
+  background: linear-gradient(135deg, var(--black), #1c1c1c);
+  color: var(--white);
+  text-align: center;
+}
+
+/* Floating WhatsApp button */
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 20;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp:hover { transform: scale(1.1); }
+
+@media (max-width: 768px) {
+  header { padding: 1.5rem 2rem; }
+  section, .hero { padding: 3.5rem 2rem; }
+  .hero h1 { font-size: 2.4rem; }
+}
+
+  </style>  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.card, section h2');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.2 });
+      reveals.forEach(el => observer.observe(el));
+    });
+  </script></head>
+<body>  <header>
+    <div class="logo">REkruitq<br><span style="font-size:0.85rem;font-family:Inter;color:#6f6f6f;">Modern Recruitment • HR • Payroll Solutions</span></div>
     <nav>
       <a href="#recruitment">Recruitment</a>
       <a href="#hr">HR</a>
       <a href="#payroll">Payroll</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
-
-  <div class="hero">
+  </header>  <div class="hero">
     <h1>People, Process, Precision</h1>
-    <p style="max-width:700px; margin: 0 auto;">South Africa–focused recruitment, HR, and payroll support for small to growing businesses. We help you stay compliant, hire smarter, and pay your people right.</p>
-  </div>
-
-  <section id="recruitment">
+    <p>South Africa–focused recruitment, HR, and payroll support for small to growing businesses. We help you stay compliant, hire smarter, and pay your people right.</p>
+  </div>  <section id="recruitment">
     <h2>Recruitment Services</h2>
     <div class="cards">
       <div class="card">
-        <h3>Background Checks</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0113 0"/></svg>Background Checks</h3>
         <p>Comprehensive employment and reference verification to ensure trustworthy hires.</p>
       </div>
       <div class="card">
-        <h3>Criminal Checks</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14l2-2 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Criminal Checks</h3>
         <p>Accurate criminal record screening in line with legal and compliance standards.</p>
       </div>
       <div class="card">
-        <h3>ITC Checks</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>ITC Checks</h3>
         <p>Credit and financial checks to assess candidate reliability and risk.</p>
       </div>
     </div>
-  </section>
-
-  <section id="hr" style="background:#fafafa; max-width: 100%;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-        <h2>HR Services</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>HR Policies</h3>
-            <p>Clear, compliant workplace policies aligned with South African labour legislation.</p>
-          </div>
-          <div class="card">
-            <h3>Employment Contracts</h3>
-            <p>Drafting and reviewing contracts that protect both employer and employee.</p>
-          </div>
-          <div class="card">
-            <h3>Employee Relations</h3>
-            <p>Support with discipline, grievances, and performance management.</p>
-          </div>
-        </div>
+  </section>  <section id="hr" style="background:#fafafa;">
+    <h2>HR Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>HR Policies & Procedures</h3>
+        <p>Clear, compliant workplace policies aligned with South African labour legislation.</p>
+      </div>
+      <div class="card">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>Employment Contracts</h3>
+        <p>Drafting and reviewing contracts that protect both employer and employee.</p>
+      </div>
     </div>
-  </section>
-
-  <section id="payroll">
+  </section>  <section id="payroll">
     <h2>Payroll Services (1–100 Employees)</h2>
     <div class="cards">
       <div class="card">
-        <h3>Monthly Processing</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M5 5h14v14H5z"/></svg>Monthly Payroll Processing</h3>
         <p>Accurate salary calculations, payslips, and deductions.</p>
       </div>
-      <div class="card">
-        <h3>Statutory Submissions</h3>
-        <p>PAYE, UIF, and SDL submissions in line with SARS requirements.</p>
-      </div>
     </div>
-  </section>
+  </section>  <section id="contact" style="background:#cfeee3;">
+    <h2>Contact REkruitq</h2>
+    <p style="max-width:600px; margin-bottom:2rem;">Ready to streamline your recruitment, HR, or payroll? Send us a message and we’ll get back to you.</p><form style="max-width:600px; display:grid; gap:1rem;">
+  <input type="text" placeholder="Full Name" required>
+  <input type="email" placeholder="Email Address" required>
+  <select>
+    <option>Recruitment</option>
+    <option>HR Services</option>
+    <option>Payroll</option>
+  </select>
+  <textarea rows="4" placeholder="Your message"></textarea>
+  <button type="submit">Send Message</button>
+</form>
 
-  <section id="contact" style="background:#cfeee3; max-width:100%;">
-    <div style="max-width: 600px; margin: 0 auto;">
-        <h2>Contact REkruitq</h2>
-        <p>Ready to streamline your business? Send us a message.</p>
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" style="display:grid; gap:1rem;">
-          <input type="text" name="name" placeholder="Full Name" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-          <input type="email" name="email" placeholder="Email Address" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-          <select name="service" style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-            <option>Recruitment</option>
-            <option>HR Services</option>
-            <option>Payroll</option>
-          </select>
-          <textarea name="message" rows="4" placeholder="Your message" style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;"></textarea>
-          <button type="submit" style="padding:0.9rem; background:#0f0f0f; color:white; border:none; border-radius:8px; font-weight:500;">Send Message</button>
-        </form>
-        <p style="margin-top:2rem;">Or WhatsApp us: <a href="https://wa.me/27728020739" style="font-weight:600; color:#0f0f0f;">Chat on WhatsApp</a></p>
-    </div>
-  </section>
+<p style="margin-top:2rem;">Or WhatsApp us directly: <a href="https://wa.me/27728020739" style="font-weight:500; color:#0f0f0f;">Chat on WhatsApp</a></p>
 
-  <footer>
-    <p><strong>Contact Us</strong></p>
-    <p>Email: <a href="mailto:Joana.REkruitq@gmail.com" style="color:#cfeee3; text-decoration:none;">Joana.REkruitq@gmail.com</a></p>
-    <p>Phone: +27 72 8020 739</p>
-    <p style="margin-top:1rem; font-size: 0.8rem; opacity: 0.7;">© 2026 REkruitq (Enterprise No: K2026089484). All rights reserved.</p>
-  </footer>
-</body>
+  </section>  <footer>
+    <p>© 2026 REkruitq (Enterprise No: K2026089484). All rights reserved.</p>
+  </footer>  <a href="https://wa.me/27728020739" class="whatsapp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28px" height="28px"><path d="M20.52 3.48C18.19 1.15 15.08 0 11.87 0 5.35 0 .03 5.32.03 11.84c0 2.09.55 4.14 1.6 5.95L0 24l6.45-1.58a11.81 11.81 0 005.42 1.33c6.52 0 11.84-5.32 11.84-11.84 0-3.21-1.15-6.32-3.48-8.53zm-8.65 16.53a10.27 10.27 0 01-5.33-1.53l-.38-.23-3.82.94.91-3.71-.25-.38a10.25 10.25 0 011.55-11.09 10.3 10.3 0 0114.53 0 10.27 10.27 0 01-9.21 15.95z"/></svg>
+  </a></body>
 </html>
