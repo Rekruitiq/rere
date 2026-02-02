@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REkruitq | Recruitment, HR & Payroll Solutions</title>
   <meta name="description" content="REkruitq provides South Africa–focused recruitment, HR, and payroll services for small to growing businesses. Compliant, people-first, and reliable." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
@@ -13,11 +13,12 @@
       --green-strong: #9ed9c5;
       --green-soft: #eef9f5;
       --gray: #6f6f6f;
+      --shadow: rgba(0,0,0,0.07);
     }* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, var(--white), var(--green-soft));
+  background: var(--white);
   color: var(--black);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -28,30 +29,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eaeaea;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
-  z-index: 10;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   letter-spacing: 1px;
 }
 
-nav { display: flex; }
+nav { display: flex; gap: 2rem; align-items: center; }
 
 nav a, .dropdown-btn {
-  margin-left: 2rem;
   text-decoration: none;
   color: var(--black);
   font-weight: 500;
-  padding: 0.3rem 0;
   position: relative;
   cursor: pointer;
+  padding: 0.2rem 0;
 }
 
 nav a::after, .dropdown-btn::after {
@@ -59,66 +59,70 @@ nav a::after, .dropdown-btn::after {
   position: absolute;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--green-strong), var(--green));
+  background: var(--green-strong);
   left: 0;
   bottom: -6px;
-  transition: width 0.3s ease;
+  transition: width 0.3s;
 }
 
 nav a:hover::after, .dropdown-btn:hover::after { width: 100%; }
 
-.dropdown { position: relative; display: inline-block; }
-
+.dropdown { position: relative; }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--white);
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: var(--white);
+  box-shadow: 0 6px 20px var(--shadow);
   border-radius: 8px;
-  z-index: 100;
-  padding: 0.5rem 0;
+  min-width: 200px;
+  top: 35px;
+  z-index: 50;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   color: var(--black);
   text-decoration: none;
+  transition: background 0.2s;
 }
 
 .dropdown-content a:hover { background: var(--green-soft); }
-
 .dropdown:hover .dropdown-content { display: block; }
 
 .hero {
-  padding: 6rem 4rem;
-  background: linear-gradient(135deg, var(--green), var(--green-soft));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, var(--green-soft), var(--white));
+  position: relative;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 1rem;
+  max-width: 800px;
 }
 
 .hero p {
+  font-size: 1.1rem;
+  color: #333;
   max-width: 650px;
   margin: 0 auto;
-  color: #2f2f2f;
-  font-size: 1.05rem;
 }
 
-section { padding: 4.5rem 4rem; position: relative; }
+section { padding: 6rem 4rem; position: relative; }
 
 section h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   position: relative;
+  text-align: center;
 }
 
 section h2::after {
@@ -127,153 +131,154 @@ section h2::after {
   height: 4px;
   background: var(--green-strong);
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -10px;
   border-radius: 10px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
 .card {
-  padding: 2.3rem;
-  border-radius: 18px;
-  background: linear-gradient(180deg, var(--white), var(--green-soft));
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 1px solid #e6f3ef;
-  opacity: 0;
-  transform: translateY(30px);
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card.active { opacity: 1; transform: translateY(0); }
+.card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px var(--shadow); }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-}
+.card h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+.card p { color: var(--gray); font-size: 0.95rem; }
 
-.card h3 { margin-bottom: 0.8rem; font-size: 1.15rem; display:flex; align-items:center; }
+.contact-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+.contact-subtitle { text-align: center; max-width: 650px; margin: 0 auto 2rem auto; color: #555; font-size: 1.05rem; }
 
-.card h3 svg { margin-right: 0.6rem; stroke: var(--green-strong); width: 28px; height: 28px; }
-
-.card p { color: var(--gray); }
-
+form { max-width: 600px; margin: 0 auto; display: grid; gap: 1rem; }
 form input, form select, form textarea {
-  font-family: 'Inter', sans-serif;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
-
-form input:focus, form select:focus, form textarea:focus {
-  outline: none;
-  border-color: var(--green-strong);
-  box-shadow: 0 0 0 3px rgba(158,217,197,0.3);
-}
-
-button {
-  cursor: pointer;
-  background: linear-gradient(135deg, var(--black), #2a2a2a);
+  padding: 0.8rem;
   border-radius: 8px;
-  color: white;
-  padding: 0.9rem;
-  font-weight: 500;
-  border: none;
-  transition: transform 0.2s ease;
+  border: 1px solid #ddd;
+  font-family: 'Inter', sans-serif;
 }
 
-button:hover { transform: scale(1.05); }
+form button {
+  padding: 0.9rem;
+  background: var(--green-strong);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+form button:hover { transform: scale(1.05); }
 
 footer {
-  padding: 3rem 4rem;
-  background: linear-gradient(135deg, var(--black), #1c1c1c);
+  background: var(--black);
   color: var(--white);
   text-align: center;
+  padding: 3rem 2rem;
 }
 
-.whatsapp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #25D366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  z-index: 20;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp:hover { transform: scale(1.1); }
-
-.contact-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-align: center;
-  color: var(--black);
-  margin-bottom: 1rem;
-}
-
-.contact-subtitle {
-  font-size: 1.1rem;
-  text-align: center;
-  color: #555;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 768px) {
-  header { padding: 1.5rem 2rem; }
-  section, .hero { padding: 3.5rem 2rem; }
+@media(max-width:768px) {
+  header { padding: 1rem 2rem; }
+  .hero { padding: 6rem 2rem; }
+  section { padding: 4rem 2rem; }
   .hero h1 { font-size: 2.4rem; }
   .contact-title { font-size: 2rem; }
-  .contact-subtitle { font-size: 1rem; }
 }
 
-  </style>  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.card, section h2');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-      }, { threshold: 0.2 });
-      reveals.forEach(el => observer.observe(el));
-    });
-  </script></head>
-<body>  <header>
-    <div class="logo">REkruitq<br><span style="font-size:0.85rem;font-family:Inter;color:#6f6f6f;">Modern Recruitment • HR • Payroll Solutions</span></div>
-    <nav>
-      <div class="dropdown">
-        <span class="dropdown-btn">Recruitment</span>
-        <div class="dropdown-content">
-          <a href="recruitment/background-checks.html">Background Checks</a>
-          <a href="recruitment/criminal-checks.html">Criminal Checks</a>
-          <a href="recruitment/itc.html">ITC Checks</a>
-        </div>
+  </style>
+</head>
+<body><header>
+  <div class="logo">REkruitq<br><span style="font-size:0.85rem;color:#6f6f6f;">Modern Recruitment • HR • Payroll</span></div>
+  <nav>
+    <div class="dropdown">
+      <span class="dropdown-btn">Recruitment</span>
+      <div class="dropdown-content">
+        <a href="recruitment/background-checks.html">Background Checks</a>
+        <a href="recruitment/criminal-checks.html">Criminal Checks</a>
+        <a href="recruitment/itc.html">ITC Checks</a>
       </div>
-      <div class="dropdown">
-        <span class="dropdown-btn">HR</span>
-        <div class="dropdown-content">
-          <a href="hr/policies.html">HR Policies & Procedures</a>
-          <a href="hr/contracts.html">Employment Contracts</a>
-        </div>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-btn">HR</span>
+      <div class="dropdown-content">
+        <a href="hr/policies.html">HR Policies & Procedures</a>
+        <a href="hr/contracts.html">Employment Contracts</a>
       </div>
-      <div class="dropdown">
-        <span class="dropdown-btn">Payroll</span>
-        <div class="dropdown-content">
-          <a href="payroll/monthly.html">Monthly Payroll Processing</a>
-        </div>
+    </div>
+    <div class="dropdown">
+      <span class="dropdown-btn">Payroll</span>
+      <div class="dropdown-content">
+        <a href="payroll/monthly.html">Monthly Payroll Processing</a>
       </div>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <!-- Hero, sections, contact, and footer remain unchanged --></body>
+    </div>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><div class="hero">
+  <h1>People, Process & Precision</h1>
+  <p>We provide South Africa–focused recruitment, HR, and payroll support for small to growing businesses. Hire smarter, manage HR efficiently, and pay accurately.</p>
+</div><section id="recruitment">
+  <h2>Recruitment Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Background Checks</h3>
+      <p>Verify employment history and references to ensure trustworthy hires.</p>
+    </div>
+    <div class="card">
+      <h3>Criminal Checks</h3>
+      <p>Accurate criminal record screening to maintain a safe workplace.</p>
+    </div>
+    <div class="card">
+      <h3>ITC Checks</h3>
+      <p>Credit and financial checks to assess candidate reliability.</p>
+    </div>
+  </div>
+</section><section id="hr" style="background:#f9f9f9;">
+  <h2>HR Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>HR Policies & Procedures</h3>
+      <p>Clear, compliant policies aligned with South African labor laws.</p>
+    </div>
+    <div class="card">
+      <h3>Employment Contracts</h3>
+      <p>Draft and review contracts that protect both employer and employee.</p>
+    </div>
+  </div>
+</section><section id="payroll">
+  <h2>Payroll Services (1–100 Employees)</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Monthly Payroll Processing</h3>
+      <p>Accurate salary calculations, payslips, and deductions for small businesses.</p>
+    </div>
+  </div>
+</section><section id="contact" style="background:var(--green-soft);">
+  <h2 class="contact-title">Connect with REkruitq</h2>
+  <p class="contact-subtitle">We are here to support your recruitment, HR, and payroll needs. Reach out today and let’s create smarter solutions for your business.</p>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <select>
+      <option>Recruitment</option>
+      <option>HR Services</option>
+      <option>Payroll</option>
+    </select>
+    <textarea rows="4" placeholder="Your message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="text-align:center; margin-top:2rem;">Or WhatsApp us directly: <a href="https://wa.me/27728020739" style="font-weight:500;color:#0f0f0f;">Chat on WhatsApp</a></p>
+</section><footer>
+  <p>© 2026 REkruitq (Enterprise No: K2026089484). All rights reserved.</p>
+</footer></body>
 </html>
