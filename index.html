@@ -1,23 +1,56 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>REkruitq | Recruitment, HR & Payroll Solutions</title>
-  <meta name="description" content="REkruitq provides South Africa–focused recruitment, HR, and payroll services for small to growing businesses. Compliant, people-first, and reliable." />
+  <meta name="description" content="REkruitq provides South Africa–focused recruitment, HR, and payroll services for small to growing businesses." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  
   <style>
-<body>  <header>
-    <div class="logo">REkruitq<br><span style="font-size:0.85rem;font-family:Inter;color:#6f6f6f;">Modern Recruitment • HR • Payroll Solutions</span></div>
+    :root { --primary: #0f0f0f; --accent: #cfeee3; --text: #333; }
+    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); line-height: 1.6; }
+    header { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: bold; }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text); font-weight: 500; }
+    
+    .hero { padding: 4rem 1.5rem; text-align: center; background: #fff; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
+    
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 2rem; }
+    
+    /* Fixing the Card Layout */
+    .cards { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 1.5rem; 
+    }
+    .card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; background: white; }
+    
+    footer { background: var(--primary); color: white; padding: 3rem 1.5rem; text-align: center; }
+    input, select, textarea { width: 100%; box-sizing: border-box; }
+    button:hover { opacity: 0.8; cursor: pointer; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">REkruitq<br><span style="font-size:0.85rem;font-family:Inter;color:#6f6f6f;font-weight:400;">Modern Recruitment • HR • Payroll</span></div>
     <nav>
       <a href="#recruitment">Recruitment</a>
       <a href="#hr">HR</a>
       <a href="#payroll">Payroll</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <div class="hero">
+  </header>
+
+  <div class="hero">
     <h1>People, Process, Precision</h1>
-    <p>South Africa–focused recruitment, HR, and payroll support for small to growing businesses. We help you stay compliant, hire smarter, and pay your people right.</p>
-  </div>  <section id="recruitment">
+    <p style="max-width:700px; margin: 0 auto;">South Africa–focused recruitment, HR, and payroll support for small to growing businesses. We help you stay compliant, hire smarter, and pay your people right.</p>
+  </div>
+
+  <section id="recruitment">
     <h2>Recruitment Services</h2>
     <div class="cards">
       <div class="card">
@@ -33,70 +66,66 @@
         <p>Credit and financial checks to assess candidate reliability and risk.</p>
       </div>
     </div>
-  </section>  <section id="hr" style="background:#fafafa;">
-    <h2>HR Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>HR Policies & Procedures</h3>
-        <p>Clear, compliant workplace policies aligned with South African labour legislation.</p>
-      </div>
-      <div class="card">
-        <h3>Employment Contracts</h3>
-        <p>Drafting and reviewing contracts that protect both employer and employee.</p>
-      </div>
-      <div class="card">
-        <h3>Employee Relations</h3>
-        <p>Support with discipline, grievances, performance management, and hearings.</p>
-      </div>
-      <div class="card">
-        <h3>Onboarding & Offboarding</h3>
-        <p>Structured processes to ensure smooth employee entry and exit.</p>
-      </div>
-      <div class="card">
-        <h3>HR Compliance & Advisory</h3>
-        <p>Guidance on BCEA, LRA, and general HR best practices.</p>
-      </div>
+  </section>
+
+  <section id="hr" style="background:#fafafa; max-width: 100%;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        <h2>HR Services</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>HR Policies</h3>
+            <p>Clear, compliant workplace policies aligned with South African labour legislation.</p>
+          </div>
+          <div class="card">
+            <h3>Employment Contracts</h3>
+            <p>Drafting and reviewing contracts that protect both employer and employee.</p>
+          </div>
+          <div class="card">
+            <h3>Employee Relations</h3>
+            <p>Support with discipline, grievances, and performance management.</p>
+          </div>
+        </div>
     </div>
-  </section>  <section id="payroll">
+  </section>
+
+  <section id="payroll">
     <h2>Payroll Services (1–100 Employees)</h2>
     <div class="cards">
       <div class="card">
-        <h3>Monthly Payroll Processing</h3>
+        <h3>Monthly Processing</h3>
         <p>Accurate salary calculations, payslips, and deductions.</p>
       </div>
       <div class="card">
         <h3>Statutory Submissions</h3>
         <p>PAYE, UIF, and SDL submissions in line with SARS requirements.</p>
       </div>
-      <div class="card">
-        <h3>Leave & Employee Records</h3>
-        <p>Leave tracking and secure payroll record management.</p>
-      </div>
-      <div class="card">
-        <h3>Payroll Reporting & Support</h3>
-        <p>Monthly reports and ongoing payroll assistance for SMEs.</p>
-      </div>
     </div>
-  </section>  <section id="contact" style="background:#cfeee3;">
-    <h2>Contact REkruitq</h2>
-    <p style="max-width:600px; margin-bottom:2rem;">Ready to streamline your recruitment, HR, or payroll? Send us a message and we’ll get back to you.</p><form style="max-width:600px; display:grid; gap:1rem;">
-  <input type="text" placeholder="Full Name" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-  <input type="email" placeholder="Email Address" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-  <select style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
-    <option>Recruitment</option>
-    <option>HR Services</option>
-    <option>Payroll</option>
-  </select>
-  <textarea rows="4" placeholder="Your message" style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;"></textarea>
-  <button type="submit" style="padding:0.9rem; background:#0f0f0f; color:white; border:none; border-radius:8px; font-weight:500;">Send Message</button>
-</form>
+  </section>
 
-<p style="margin-top:2rem;">Or WhatsApp us directly: <a href="https://wa.me/27728020739" style="font-weight:500; color:#0f0f0f;">Chat on WhatsApp</a></p>
+  <section id="contact" style="background:#cfeee3; max-width:100%;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2>Contact REkruitq</h2>
+        <p>Ready to streamline your business? Send us a message.</p>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" style="display:grid; gap:1rem;">
+          <input type="text" name="name" placeholder="Full Name" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
+          <input type="email" name="email" placeholder="Email Address" required style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
+          <select name="service" style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;">
+            <option>Recruitment</option>
+            <option>HR Services</option>
+            <option>Payroll</option>
+          </select>
+          <textarea name="message" rows="4" placeholder="Your message" style="padding:0.8rem; border-radius:8px; border:1px solid #ccc;"></textarea>
+          <button type="submit" style="padding:0.9rem; background:#0f0f0f; color:white; border:none; border-radius:8px; font-weight:500;">Send Message</button>
+        </form>
+        <p style="margin-top:2rem;">Or WhatsApp us: <a href="https://wa.me/27728020739" style="font-weight:600; color:#0f0f0f;">Chat on WhatsApp</a></p>
+    </div>
+  </section>
 
-  </section>  <footer>
+  <footer>
     <p><strong>Contact Us</strong></p>
     <p>Email: <a href="mailto:Joana.REkruitq@gmail.com" style="color:#cfeee3; text-decoration:none;">Joana.REkruitq@gmail.com</a></p>
-    <p>Phone: <a href="tel:+27728020739" style="color:#cfeee3; text-decoration:none;">+27 72 8020 739</a></p>
-    <p style="margin-top:1rem;">© 2026 REkruitq (Enterprise No: K2026089484). All rights reserved.</p>
-  </footer></body>
+    <p>Phone: +27 72 8020 739</p>
+    <p style="margin-top:1rem; font-size: 0.8rem; opacity: 0.7;">© 2026 REkruitq (Enterprise No: K2026089484). All rights reserved.</p>
+  </footer>
+</body>
 </html>
