@@ -3,109 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rekruitiq | Global Talent Partners</title>
+  <title>Rekruitiq | Global Talent Recruitment</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <style>
     :root {
-      --sage: #84a59d;     /* Your requested Green */
-      --earth: #6b5e51;    /* Your requested Brown */
-      --sand: #fdfbf9;     /* Minimalist Off-white background */
-      --dark: #333333;     /* Soft black for text */
-      --light-gray: #f4f4f4;
+      --sage: #84a59d;
+      --earth: #6b5e51;
+      --sand: #fdfbf9;
+      --dark: #333333;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body { 
-      background: var(--sand); 
-      color: var(--dark); 
-      font-family: 'Inter', sans-serif; 
-      line-height: 1.8; 
-      -webkit-font-smoothing: antialiased; 
-    }
-
+    body { background: var(--sand); color: var(--dark); font-family: 'Inter', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
     .container { width: 88%; max-width: 1100px; margin: auto; }
     a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
-    /* --- Hero Section --- */
-    .hero { 
-      min-height: 100vh; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      text-align: center;
-      padding: 0 1rem;
+    /* --- Navigation Bar --- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.4s ease;
     }
-    .hero h1 { 
-      font-family: 'Playfair Display', serif; 
-      font-size: clamp(3.5rem, 10vw, 6rem); 
-      color: var(--earth);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
+    nav.scrolled {
+      padding: 1rem 0;
+      background: rgba(253, 251, 249, 0.8); /* Match --sand with transparency */
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      border-bottom: 1px solid rgba(132, 165, 157, 0.2);
     }
-    .hero p { 
-      font-weight: 300; 
-      font-size: 1rem; 
-      color: var(--sage); 
-      letter-spacing: 0.2em; 
-      text-transform: uppercase; 
-      margin-bottom: 3rem; 
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--earth); }
+    .nav-links { display: flex; gap: 2.5rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+    .nav-links a:hover { color: var(--sage); }
 
-    /* --- Buttons --- */
-    .btn { 
-      padding: 1.2rem 3rem; 
-      background: var(--earth); 
-      color: #fff; 
-      border-radius: 2px; 
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 500;
-      display: inline-block;
-      border: 1px solid var(--earth);
-    }
+    /* --- Hero --- */
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 10vw, 6rem); color: var(--earth); margin-bottom: 0.5rem; font-weight: 600; letter-spacing: -0.03em; }
+    .hero p { font-weight: 300; font-size: 1rem; color: var(--sage); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3rem; }
+
+    /* --- Common Styles --- */
+    .btn { padding: 1.2rem 3rem; background: var(--earth); color: #fff; border-radius: 2px; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; display: inline-block; border: 1px solid var(--earth); cursor: pointer; }
     .btn:hover { background: transparent; color: var(--earth); transform: translateY(-2px); }
-
-    /* --- Content Sections --- */
     section { padding: 10rem 0; }
     h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--earth); margin-bottom: 2rem; }
     .section-subtitle { color: var(--sage); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1rem; margin-bottom: 1rem; display: block; }
 
-    /* --- Services Grid --- */
+    /* --- Services --- */
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 5rem; margin-top: 5rem; }
-    .service-card { text-align: left; }
     .icon-box { color: var(--sage); margin-bottom: 2rem; }
     .service-card h3 { font-size: 1.3rem; margin-bottom: 1.2rem; font-weight: 500; color: var(--earth); font-family: 'Playfair Display', serif; }
     .service-card p { font-size: 0.95rem; color: #777; font-weight: 300; }
 
-    /* --- Contact Area --- */
+    /* --- Contact --- */
     .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
     .info-item { margin-bottom: 2.5rem; }
     .info-item h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1rem; color: var(--sage); margin-bottom: 0.5rem; }
     .info-item p, .info-item a { font-size: 1.2rem; font-weight: 300; }
-    .info-item a:hover { color: var(--sage); }
-
-    form input, form textarea { 
-      width: 100%; padding: 1.2rem 0; border: none; border-bottom: 1px solid #ddd; background: transparent; 
-      margin-bottom: 2.5rem; font-size: 1rem; outline: none; transition: 0.3s; font-family: 'Inter', sans-serif;
-    }
+    form input, form textarea { width: 100%; padding: 1.2rem 0; border: none; border-bottom: 1px solid #ddd; background: transparent; margin-bottom: 2.5rem; font-size: 1rem; outline: none; transition: 0.3s; font-family: 'Inter', sans-serif; }
     form input:focus { border-bottom: 1px solid var(--sage); }
 
     /* --- Animations --- */
     .fade-in { opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* --- Footer --- */
     footer { padding: 5rem 0; border-top: 1px solid #eee; text-align: center; font-size: 0.75rem; color: #bbb; letter-spacing: 0.1em; }
 
     @media (max-width: 850px) {
+      .nav-links { display: none; } /* Simplified for mobile - can add hamburger later */
       .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
       section { padding: 6rem 0; }
     }
@@ -113,21 +86,32 @@
 </head>
 <body>
 
+  <nav id="navbar">
+    <div class="container nav-content">
+      <div class="logo">Rekruitiq.</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <section class="hero">
     <h1 class="fade-in">Rekruitiq.</h1>
-    <p class="fade-in">Global Talent Curators</p>
+    <p class="fade-in">Global Talent Recruitment</p>
     <div class="fade-in">
-        <a href="#contact" class="btn">Start a Conversation</a>
+        <a href="#contact" class="btn">Inquire Now</a>
     </div>
   </section>
 
   <section id="about">
     <div class="container fade-in">
       <span class="section-subtitle">Our Philosophy</span>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
         <h2>Connecting elite talent with visionary brands.</h2>
         <p style="font-weight: 300; color: #666;">
-          Rekruitiq specializes in the architecture of modern teams. We bridge the gap between world-class talent and companies that demand excellence, handling the complexities of global recruitment, remote HR, and international payroll systems with absolute precision.
+          Rekruitiq specializes in the architecture of modern teams. We handle the complexities of global recruitment, remote HR, and international payroll systems with absolute precision.
         </p>
       </div>
     </div>
@@ -141,17 +125,17 @@
         <div class="service-card fade-in">
           <div class="icon-box"><i data-lucide="briefcase" stroke-width="1.5" size="32"></i></div>
           <h3>Executive Recruitment</h3>
-          <p>Identifying and securing high-impact leaders who align with your corporate culture and long-term strategic vision.</p>
+          <p>Securing high-impact leaders who align with your culture and long-term strategic vision.</p>
         </div>
         <div class="service-card fade-in">
           <div class="icon-box"><i data-lucide="globe" stroke-width="1.5" size="32"></i></div>
           <h3>Global Payroll Support</h3>
-          <p>Expert management of international payroll frameworks, specializing in Payspace system support and global compliance.</p>
+          <p>Expert management of international payroll frameworks, specializing in Payspace system support.</p>
         </div>
         <div class="service-card fade-in">
           <div class="icon-box"><i data-lucide="layers" stroke-width="1.5" size="32"></i></div>
           <h3>Talent Acquisition</h3>
-          <p>End-to-end strategy for high-growth firms looking to scale their remote or local workforce efficiently.</p>
+          <p>End-to-end strategy for high-growth firms looking to scale their workforce efficiently.</p>
         </div>
       </div>
     </div>
@@ -161,30 +145,26 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info fade-in">
-          <span class="section-subtitle">Inquire</span>
-          <h2>Let's build your team.</h2>
-          
+          <span class="section-subtitle">Contact</span>
+          <h2>Let's build.</h2>
           <div class="info-item">
             <h4>Email</h4>
             <p><a href="mailto:Joana.rekruitq@gmail.com">Joana.rekruitq@gmail.com</a></p>
           </div>
-
           <div class="info-item">
             <h4>Phone</h4>
             <p><a href="tel:0728020739">072 8020 739</a></p>
           </div>
-
           <div class="info-item">
             <h4>LinkedIn</h4>
-            <p><a href="https://www.linkedin.com/in/joana-rodrigues-094833111" target="_blank">Connect with Joana Rodrigues</a></p>
+            <p><a href="https://www.linkedin.com/in/joana-rodrigues-094833111" target="_blank">Connect with Joana</a></p>
           </div>
         </div>
-        
         <form class="fade-in" action="#" method="POST">
           <input type="text" placeholder="Full Name" required>
           <input type="email" placeholder="Work Email" required>
           <textarea placeholder="Message" rows="5" required></textarea>
-          <button type="submit" class="btn">Send Inquiry</button>
+          <button type="submit" class="btn" style="width: 100%;">Send Message</button>
         </form>
       </div>
     </div>
@@ -192,20 +172,26 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 REKRUITIQ. ALL RIGHTS RESERVED.</p>
+      <p>&copy; 2026 REKRUITIQ. GLOBAL TALENT RECRUITMENT.</p>
     </div>
   </footer>
 
   <script>
-    // Initialize Professional Icons
     lucide.createIcons();
 
-    // Intersection Observer for the Reveal Effect
+    // Scroll effect for Navbar
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
 
