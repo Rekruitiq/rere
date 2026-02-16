@@ -33,24 +33,35 @@
     .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 10vw, 6rem); color: var(--earth); margin-bottom: 0.5rem; font-weight: 600; letter-spacing: -0.03em; }
     .hero p { font-weight: 300; font-size: 1rem; color: var(--sage); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3rem; }
 
-    /* --- NEW: Minimalist Visual Break --- */
+    /* --- LARGE CENTRAL ICON SECTION --- */
     .visual-break {
-      height: 60vh;
-      background: #f4f1ee; /* Soft neutral earth tone */
+      height: 70vh;
+      background: #f7f4f1; 
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       position: relative;
     }
-    .visual-break i { color: var(--sage); opacity: 0.4; transform: scale(4); }
-    /* This creates a subtle decorative line behind the icon */
-    .visual-break::before {
+    .main-icon-wrapper {
+      color: var(--sage);
+      transition: transform 0.5s ease;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    .visual-break::after {
       content: '';
       position: absolute;
+      bottom: 0;
       width: 1px;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent, var(--sage), transparent);
+      height: 150px;
+      background: linear-gradient(to top, var(--earth), transparent);
+      opacity: 0.3;
     }
 
     /* --- Sections --- */
@@ -60,11 +71,10 @@
     h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--earth); margin-bottom: 2rem; }
     .section-subtitle { color: var(--sage); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1rem; margin-bottom: 1rem; display: block; }
 
-    /* --- Services & Contact --- */
+    /* --- Grid Layouts --- */
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 5rem; margin-top: 5rem; }
     .icon-box { color: var(--sage); margin-bottom: 2rem; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
-    .info-item { margin-bottom: 2.5rem; }
     form input, form textarea { width: 100%; padding: 1.2rem 0; border: none; border-bottom: 1px solid #ddd; background: transparent; margin-bottom: 2.5rem; font-size: 1rem; outline: none; transition: 0.3s; }
     form input:focus { border-bottom: 1px solid var(--sage); }
 
@@ -78,7 +88,7 @@
       .nav-links { display: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
       section { padding: 6rem 0; }
-      .visual-break { height: 40vh; }
+      .visual-break { height: 50vh; }
     }
   </style>
 </head>
@@ -104,8 +114,10 @@
   </section>
 
   <div class="visual-break">
-    <div class="fade-in">
-      <i data-lucide="compass"></i> </div>
+    <div class="main-icon-wrapper fade-in">
+      <i data-lucide="share-2" stroke-width="0.5" size="120"></i>
+    </div>
+    <p class="fade-in" style="margin-top: 2rem; color: var(--earth); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.6;">Global Connectivity</p>
   </div>
 
   <section id="about">
